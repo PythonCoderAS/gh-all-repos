@@ -1,7 +1,7 @@
 {
-  "name": "<package-name>",
+  "name": "github-all-repos",
   "version": "1.0.0",
-  "description": "<package-description>",
+  "description": "Do anything on all repos that belong to a user/org.",
   "main": "dist/index.js",
   "type": "commonjs",
   "types": "dist/index.d.ts",
@@ -13,16 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PythonCoderAS/<package-name>.git"
+    "url": "git+https://github.com/PythonCoderAS/github-all-repos.git"
   },
   "keywords": [],
   "author": "PythonCoderAS",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PythonCoderAS/<package-name>/issues"
+    "url": "https://github.com/PythonCoderAS/github-all-repos/issues"
   },
-  "homepage": "https://github.com/PythonCoderAS/<package-name>#readme",
+  "homepage": "https://github.com/PythonCoderAS/github-all-repos#readme",
   "dependencies": {
+    "@octokit/rest": "^19.0.4",
+    "@pythoncoderas/get-github-token": "^1.0.0",
+    "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
