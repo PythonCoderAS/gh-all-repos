@@ -8,7 +8,7 @@ export default abstract class BaseHandler<T extends BaseOptions> {
   private makeOctokit(options: T) {
     this.octokit = new Octokit({
       auth: getToken(options.token),
-      userAgent: "github-all-repos",
+      userAgent: "gh-all-repos",
     });
   }
 

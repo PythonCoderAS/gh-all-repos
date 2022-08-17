@@ -1,4 +1,4 @@
-test.ts
+tests/*
 src/*
 .*
 *config.*

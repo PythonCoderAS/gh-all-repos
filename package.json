@@ -1,5 +1,5 @@
 {
-  "name": "github-all-repos",
+  "name": "gh-all-repos",
   "version": "1.0.0",
   "description": "Do anything on all repos that belong to a user/org.",
   "main": "dist/index.js",
@@ -12,19 +12,19 @@
     "lint-fix": "prettier --write . && eslint . --ext .ts --fix"
   },
   "bin": {
-    "github-all-repos": "./dist/index.js"
+    "gh-all-repos": "./dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PythonCoderAS/github-all-repos.git"
+    "url": "git+https://github.com/PythonCoderAS/gh-all-repos.git"
   },
   "keywords": [],
   "author": "PythonCoderAS",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PythonCoderAS/github-all-repos/issues"
+    "url": "https://github.com/PythonCoderAS/gh-all-repos/issues"
   },
-  "homepage": "https://github.com/PythonCoderAS/github-all-repos#readme",
+  "homepage": "https://github.com/PythonCoderAS/gh-all-repos#readme",
   "dependencies": {
     "@octokit/rest": "^19.0.4",
     "@pythoncoderas/get-github-token": "^1.0.0",
