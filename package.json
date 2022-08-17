@@ -11,6 +11,9 @@
     "lint": "prettier --check . && eslint . --ext .ts",
     "lint-fix": "prettier --write . && eslint . --ext .ts --fix"
   },
+  "bin": {
+    "github-all-repos": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PythonCoderAS/github-all-repos.git"
@@ -25,11 +28,14 @@
   "dependencies": {
     "@octokit/rest": "^19.0.4",
     "@pythoncoderas/get-github-token": "^1.0.0",
+    "chalk": "^4.1.2",
+    "lodash.capitalize": "^4.2.1",
     "sade": "^1.8.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
     "@types/chai-as-promised": "^7.1.5",
+    "@types/lodash.capitalize": "^4.2.7",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.7.5",
     "chai": "^4.3.6",

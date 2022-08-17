@@ -1,3 +1,6 @@
 {
-  "extends": ["pythoncoderas-combo"]
+  "extends": ["pythoncoderas-combo"],
+  "rules": {
+    "class-methods-use-this": "off"
+  }
 }
