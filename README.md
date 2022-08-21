@@ -1,12 +1,10 @@
-# typescript-project-template
+# gh-all-repos
 
-Template repo for new TypeScript projects.
+Run commands across all repositories under a GitHub user account/organization.
 
-This repo assumes the following:
+Current commands:
 
-- Source code lives in the `src` directory.
-- The main export is located in `src/index.ts`.
-- Tests live in the `test` directory.
-- Each test is name `<name>.test.ts`.
-- The `npm_token`, `app_id`, and `app_private_key` secrets are present in the repo.
-- The code will be a CommonJS module.
+* `watch`: Watch all repositories under a GitHub user account/organization.
+* `unwatch`: Unwatch all repositories under a GitHub user account/organization.
+* `ignore`: Ignore all repositories under a GitHub user account/organization.
+* `list-pr`: List all pull requests for all repositories under a GitHub user account/organization.
