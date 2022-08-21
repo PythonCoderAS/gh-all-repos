@@ -9,5 +9,6 @@ describe("list-pr tests", () => {
       .to.eventually.have.property("stdout")
       .which.contain(
         "[Open] https://github.com/PythonCoderAS/GithubAPIIntegrationTest/pull/1: Github API PR Test 1"
-      ).and.to.eventually.not.have.property("stderr"));
+      )
+      .and.to.eventually.not.have.property("stderr"));
 });
