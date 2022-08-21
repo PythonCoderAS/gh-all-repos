@@ -28,7 +28,7 @@
   "dependencies": {
     "@octokit/rest": "^19.0.4",
     "@pythoncoderas/get-github-token": "^1.0.0",
-    "chalk": "^5.0.1",
+    "chalk": "^4.1.2",
     "lodash.capitalize": "^4.2.1",
     "sade": "^1.8.1"
   },
