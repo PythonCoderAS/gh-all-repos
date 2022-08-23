@@ -14,7 +14,10 @@ export default abstract class BaseHandler<T extends BaseOptions, RT = Repo[]> {
 
   public abstract getRepoList(user: string, options: T): Promise<RT>;
 
-  protected async getRepoListToRepoArray(user: string, options: T): Promise<Repo[]> {
+  protected async getRepoListToRepoArray(
+    user: string,
+    options: T
+  ): Promise<Repo[]> {
     const mode = options.collaborator ? "all" : "owner";
     const includePrivate = options.private ?? false;
     const repoData = await this.octokit!.paginate(
@@ -31,7 +34,8 @@ export default abstract class BaseHandler<T extends BaseOptions, RT = Repo[]> {
       .map((repo) => ({
         owner: repo.owner.login,
         name: repo.name,
-      })).sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+      }))
+      .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
   }
 
   public abstract processList(options: T, repos: RT): Promise<unknown>;

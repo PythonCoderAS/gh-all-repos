@@ -34,7 +34,7 @@ class ListPr extends BaseHandler<ListPrOptions> {
   }
 
   getRepoList(user: string, options: ListPrOptions): Promise<Repo[]> {
-    return this.getRepoListToRepoArray(user, options)
+    return this.getRepoListToRepoArray(user, options);
   }
 
   private printHeading(options: ListPrOptions, repo: Repo, prs: Pr[]) {

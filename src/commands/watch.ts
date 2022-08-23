@@ -45,7 +45,7 @@ export default class WatchRepos extends BaseHandler<BaseOptions> {
   }
 
   getRepoList(user: string, options: BaseOptions): Promise<Repo[]> {
-    return this.getRepoListToRepoArray(user, options)
+    return this.getRepoListToRepoArray(user, options);
   }
 }
 cli
