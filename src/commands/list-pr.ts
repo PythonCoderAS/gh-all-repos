@@ -1,8 +1,9 @@
 import chalk from "chalk";
 import capitalize from "lodash.capitalize";
+
+import BaseHandler from "../baseHandler";
 import cli from "../cli";
 import { BaseOptions, Repo } from "../types";
-import BaseHandler from "../baseHandler";
 
 interface ListPrOptions extends BaseOptions {
   open?: boolean;

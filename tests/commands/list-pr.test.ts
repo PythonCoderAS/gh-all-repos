@@ -1,4 +1,5 @@
 import { expect } from "chai";
+
 import { runCommandWithArgs, runCommandWithArgsAndOutput } from "../index";
 
 describe("list-pr tests", () => {

@@ -1,5 +1,6 @@
 import { Octokit } from "@octokit/rest";
 import getToken from "@pythoncoderas/get-github-token";
+
 import { BaseOptions, Repo } from "./types";
 
 export default abstract class BaseHandler<T extends BaseOptions, RT = Repo[]> {

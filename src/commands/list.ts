@@ -1,8 +1,9 @@
-import { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 import { Octokit } from "@octokit/rest";
+import { GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
+
+import BaseHandler from "../baseHandler";
 import cli from "../cli";
 import { BaseOptions } from "../types";
-import BaseHandler from "../baseHandler";
 
 // This is only used for getting the type.
 const octokit = new Octokit();

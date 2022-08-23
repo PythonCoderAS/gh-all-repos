@@ -1,6 +1,6 @@
+import BaseHandler from "../baseHandler";
 import cli from "../cli";
 import { BaseOptions, Repo } from "../types";
-import BaseHandler from "../baseHandler";
 
 export default class WatchRepos extends BaseHandler<BaseOptions> {
   extraParams: { subscribed?: boolean; ignored?: boolean };
