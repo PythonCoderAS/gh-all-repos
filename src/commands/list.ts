@@ -171,11 +171,11 @@ class List extends BaseHandler<ListOptions, FullRepoData> {
       return true;
     });
     if (options["show-owner-name"] ?? true) {
-      filteredRepos.forEach((repo) => console.log(repo.name));
-    } else {
       filteredRepos.forEach((repo) =>
         console.log(`${repo.owner.login}/${repo.name}`)
       );
+    } else {
+      filteredRepos.forEach((repo) => console.log(repo.name));
     }
   }
 }
