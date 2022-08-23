@@ -67,7 +67,6 @@ class List extends BaseHandler<ListOptions, FullRepoData> {
   private transformListOptionstoTrueListOptions(
     options: ListOptions
   ): TrueListOptions {
-    console.log(options);
     const data: TrueListOptions = {};
     if (options.fork !== undefined) {
       data.fork = options.fork;
@@ -116,8 +115,6 @@ class List extends BaseHandler<ListOptions, FullRepoData> {
 
   async processList(options: ListOptions, repos: FullRepoData) {
     const trueOptions = this.transformListOptionstoTrueListOptions(options);
-    console.log(trueOptions);
-    console.log(repos[0]);
     const filteredRepos = repos.filter((repo) => {
       if (
         trueOptions.archived !== undefined &&
