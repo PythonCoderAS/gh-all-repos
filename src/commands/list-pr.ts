@@ -33,6 +33,10 @@ class ListPr extends BaseHandler<ListPrOptions> {
     return Promise.resolve();
   }
 
+  getRepoList(user: string, options: ListPrOptions): Promise<Repo[]> {
+    return this.getRepoListToRepoArray(user, options)
+  }
+
   private printHeading(options: ListPrOptions, repo: Repo, prs: Pr[]) {
     let heading = chalk.bold(`${repo.owner}/${repo.name}`);
     const repoLimit = parseInt(options["repo-limit"], 10);

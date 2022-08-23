@@ -2,7 +2,7 @@ import { Octokit } from "@octokit/rest";
 import getToken from "@pythoncoderas/get-github-token";
 import { BaseOptions, Repo } from "./types";
 
-export default abstract class BaseHandler<T extends BaseOptions> {
+export default abstract class BaseHandler<T extends BaseOptions, RT = Repo[]> {
   octokit: Octokit | null = null;
 
   private makeOctokit(options: T) {
@@ -12,7 +12,9 @@ export default abstract class BaseHandler<T extends BaseOptions> {
     });
   }
 
-  public async getRepoList(user: string, options: T): Promise<Repo[]> {
+  public abstract getRepoList(user: string, options: T): Promise<RT>;
+
+  protected async getRepoListToRepoArray(user: string, options: T): Promise<Repo[]> {
     const mode = options.collaborator ? "all" : "owner";
     const includePrivate = options.private ?? false;
     const repoData = await this.octokit!.paginate(
@@ -29,13 +31,13 @@ export default abstract class BaseHandler<T extends BaseOptions> {
       .map((repo) => ({
         owner: repo.owner.login,
         name: repo.name,
-      }));
+      })).sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
   }
 
-  public abstract processList(options: T, repos: Repo[]): Promise<unknown>;
+  public abstract processList(options: T, repos: RT): Promise<unknown>;
 
-  public abstract preFinish(repos: Repo[]): Promise<unknown>;
-  public abstract postFinish(repos: Repo[]): Promise<unknown>;
+  public abstract preFinish(repos: RT): Promise<unknown>;
+  public abstract postFinish(repos: RT): Promise<unknown>;
 
   public async handle(user: string, options: T): Promise<unknown> {
     this.makeOctokit(options);

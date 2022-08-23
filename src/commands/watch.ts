@@ -43,6 +43,10 @@ export default class WatchRepos extends BaseHandler<BaseOptions> {
     console.log(`${this.names.post} ${repos.length} repos.`);
     return Promise.resolve();
   }
+
+  getRepoList(user: string, options: BaseOptions): Promise<Repo[]> {
+    return this.getRepoListToRepoArray(user, options)
+  }
 }
 cli
   .command("watch <user>", "Watch all repositories under a user/org.")
